@@ -1,19 +1,16 @@
-# Config.py
-
 import pygame
+pygame.init()
 
 #  Window Settings
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 800
-SCREEN_TITLE = "Fruit Fall Frenzy"  # You can change this title
+SCREEN_TITLE = "Food Fall Frenzy"
+GROUND_HEIGHT = 50
+GROUND_WIDTH = 600
 FPS = 60
 
 #  Player Settings
-PLAYER_SPEED = 5
-PLAYER_START_Y = SCREEN_HEIGHT - 100
-PLAYER_WIDTH = 64
-PLAYER_HEIGHT = 64
-PLAYER_IMAGE = "img/player.png"  # update to your real image path
+PLAYER_SPEED = 0.8
 
 # Item Settings
 GOOD_ITEM_IMAGE = "img/good_food.png"
@@ -27,9 +24,12 @@ GOLDEN_FRUIT_SPEED = 3
 ITEM_WIDTH = 40
 ITEM_HEIGHT = 40
 
+# Reading/Writing Files:
+STATE_FILE = "game_state.txt"
+
 # ----- Heart/Lives -----
 STARTING_LIVES = 3
-HEART_IMAGE = "img/heart.png"
+HEART_IMAGE = "img/Heart.png"
 
 # ----- Score -----
 SCORE_FONT = "freesansbold.ttf"
@@ -51,4 +51,3 @@ SOUND_GOLDEN_FRUIT = "audio/play_golden_fruit.wav.wav"
 SOUND_GAME_OVER = "audio/play_game_over.wav.wav"
 
 SAVE_FILE_PATH = "data/save_data.txt"  # for score saving
-INSTRUCTIONS_FILE = "data/instructions.txt"  # optional instructions text
