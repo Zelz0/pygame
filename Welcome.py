@@ -15,7 +15,7 @@ def run_welcome_screen(game_screen, font):
         for i in range(3):
             game_screen.blit(heart_image, (heart_x + i * 60, heart_y))
 
-        # Welcome Text
+        # Welcome & Instructions
         title_text = font.render("Welcome to Food Fall Frenzy!", True, config.WHITE)
         start_text = font.render("Press SPACE to start", True, config.WHITE)
         instructions_text = font.render("Press I for Instructions", True, config.WHITE)
@@ -48,18 +48,11 @@ def show_instructions_screen(game_screen, font):
     while viewing:
         game_screen.fill(config.BLACK)
 
-        # Instructions
-        lines = [
-            "How to Play:",
-            "- Use A/D keys to move the cart left/right.",
-            "- Catch food to earn points, avoid trash to stay alive!",
-            "- Golden fruits give extra points!",
-            "- The goal is to earn 25 points without dying.",
-            "Press B to go back."
-        ]
+        with open(config.INSTRUCTIONS_FILE, "r") as file:
+            lines = file.readlines()
 
         for i, line in enumerate(lines):
-            text = font.render(line, True, config.WHITE)
+            text = font.render(line.strip(), True, config.WHITE)
             rect = text.get_rect(center=(config.SCREEN_WIDTH // 2, 200 + i * 40))
             game_screen.blit(text, rect)
 
@@ -69,7 +62,6 @@ def show_instructions_screen(game_screen, font):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
-
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_b:
                     viewing = False

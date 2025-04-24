@@ -1,0 +1,6 @@
+How to Play:
+- Use A/D keys to move the cart left/right.
+- Catch food to earn points, avoid trash to stay alive!
+- The Golden Apple gives extra points!
+- The goal is to earn 25 points without dying.
+- Press B to return

@@ -1,7 +1,6 @@
 import pygame
 import config
 
-#There's a # in front of some lines so we can update them with the correct image file, then remove the #
 class Player:
     def __init__(self):
         self.image = pygame.image.load("img/ShoppingCart.png").convert_alpha()
