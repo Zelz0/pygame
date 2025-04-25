@@ -1,1 +1,3 @@
-Game is Running!
+Started
+
+Press B to return
