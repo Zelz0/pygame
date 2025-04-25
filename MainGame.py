@@ -117,7 +117,7 @@ while True:
     high_rect = high_score_text.get_rect(center=(config.SCREEN_WIDTH // 2, config.SCREEN_HEIGHT // 2 + 40))
     game_screen.blit(high_score_text, high_rect)
 
-    restart_text = font.render("Press R to play again", True, config.WHITE)
+    restart_text = font.render("Press R to play again and ESC to exit", True, config.WHITE)
     restart_rect = restart_text.get_rect(center=(config.SCREEN_WIDTH // 2, config.SCREEN_HEIGHT // 2 + 100))
     game_screen.blit(restart_text, restart_rect)
 
