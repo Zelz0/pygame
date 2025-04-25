@@ -13,7 +13,7 @@ FPS = 60
 PLAYER_SPEED = 10
 
 # Item Speed
-SPRITE_SPEEDS = {"F1": 10,"F2": 11,"F3": 12,"F4": 12, "F5": 10,"F6": 11,"GA": 12,"T1": 12,"T2": 12,"T3": 12}
+SPRITE_SPEEDS = {"F1": 8,"F2": 10,"F3": 8,"F4": 12, "F5": 10,"F6": 8,"GA": 12,"T1": 8,"T2": 8,"T3": 8}
 
 # Item Images
 SPRITE_PATHS = {"F1": ["img/F1.png"],
@@ -27,15 +27,17 @@ SPRITE_PATHS = {"F1": ["img/F1.png"],
                 "T2": ["img/T2.png"],
                 "T3": ["img/T3.png"]
                 }
-
-ITEM_WIDTH = 40
-ITEM_HEIGHT = 40
+# Items Size
+ITEM_WIDTH = 50
+ITEM_HEIGHT = 50
 
 # Reading/Writing Files:
 STATE_FILE = "ReadWriteFiles/game_state.txt"
 HIGH_SCORE_FILE = "ReadWriteFiles/high_scores.txt"
 PLAYER_DATA_FILE = "ReadWriteFiles/player_data.txt"
 INSTRUCTIONS_FILE = "ReadWriteFiles/instructions.txt"
+ENDGAME_FILE = "ReadWriteFiles/endgame.txt"
+
 
 # ----- Heart/Lives -----
 STARTING_LIVES = 3
@@ -54,8 +56,12 @@ GREEN = (0, 255, 0)
 GOLD = (255, 215, 0)
 BLUE = (0, 0, 255)
 
-# ----- File Paths -----
+# Events
+MY_CUSTOM_EVENT = pygame.USEREVENT + 1
+
+# ----- File Sounds -----
 SOUND_GOOD_CATCH = "audio/play_good_catch.wav.wav"
 SOUND_BAD_CATCH = "audio/play_bad_catch.wav.wav"
-SOUND_GOLDEN_FRUIT = "audio/play_golden_fruit.wav.wav"
+SOUND_GOLDEN_APPLE = "audio/play_golden_fruit.wav.wav"
 SOUND_GAME_OVER = "audio/play_game_over.wav.wav"
+SPRITE_SPAWN_SOUND = "audio/Sprite_Spawn.ogg"

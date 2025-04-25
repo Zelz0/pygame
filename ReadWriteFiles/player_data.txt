@@ -1,0 +1,10 @@
+Player Stats:
+Player Identity: Shopping Cart
+Age: 20 years old
+Ranking: 203/1020
+Look: Rusty
+Capacity: Unknown
+Cleanliness: Needs work
+Goals in life: Eat all food
+
+Press B to return

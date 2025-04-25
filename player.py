@@ -8,7 +8,7 @@ class Player:
         self.speed = config.PLAYER_SPEED
         self.rect = self.image.get_rect(center=(config.SCREEN_WIDTH//2, config.SCREEN_HEIGHT-70))
         self.alive = True
-        #self.dead_sound = pygame.mixer.Sound(config.PLAYER_DEAD_SOUND)
+        self.dead_sound = pygame.mixer.Sound(config.SOUND_GAME_OVER)
 
     def move(self, keys):
         if keys[pygame.K_a] and self.rect.left > 0:
