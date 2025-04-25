@@ -39,6 +39,9 @@ while True:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                exit()
             elif event.type == config.MY_CUSTOM_EVENT:
                 sprite = Sprite()
                 sprites.append(sprite)
@@ -97,13 +100,14 @@ while True:
     game_screen.fill(config.BLACK)
 
 # Endgame message
-    with open(config.ENDGAME_FILE, "r") as file:
-        endgame_message = file.read()
-    lines = endgame_message.split('\n')
-    for i, line in enumerate(lines):
-        rendered_line = font.render(line, True, config.WHITE)
-        text_rect = rendered_line.get_rect(center=(config.SCREEN_WIDTH // 2, config.SCREEN_HEIGHT // 2 - 80 + i * 30))
-        game_screen.blit(rendered_line, text_rect)
+    if score >= 25:
+        with open(config.ENDGAME_FILE, "r") as file:
+            endgame_message = file.read()
+        lines = endgame_message.split('\n')
+        for i, line in enumerate(lines):
+            rendered_line = font.render(line, True, config.WHITE)
+            text_rect = rendered_line.get_rect(center=(config.SCREEN_WIDTH // 2, config.SCREEN_HEIGHT // 2 - 80 + i * 30))
+            game_screen.blit(rendered_line, text_rect)
 
     final_score_text = font.render(f"Final Score: {score}", True, config.WHITE)
     final_rect = final_score_text.get_rect(center=(config.SCREEN_WIDTH // 2, config.SCREEN_HEIGHT // 2))
@@ -123,7 +127,7 @@ while True:
     waiting_for_restart = True
     while waiting_for_restart:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT or event.type == pygame.K_ESCAPE:
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 pygame.quit()
                 exit()
             if event.type == pygame.KEYDOWN:
