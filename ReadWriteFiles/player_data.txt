@@ -1,4 +1,4 @@
-Player Stats:
+Player Stats
 Player Identity: Shopping Cart
 Age: 20 years old
 Ranking: 203/1020
